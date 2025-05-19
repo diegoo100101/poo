@@ -8,9 +8,10 @@ class Vehiculo {
     }
 
     public arrancar(): void {
-        
+        console.log(`${this.marca} ${this.modelo} está arrancando.`);
     }
 
     public detener(): void {
+        console.log(`${this.marca} ${this.modelo} se ha detenido.`);
     }
 }
