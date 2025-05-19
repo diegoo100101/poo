@@ -1,50 +1,50 @@
 // Clase abstracta para un avión
 abstract class Avion {
-  constructor(protected modelo: string) {}
+    constructor(protected modelo: string) { }
 
-  // Método abstracto que debe ser implementado por las subclases
-  abstract mostrarInformacion(): void;
+    // Método abstracto que debe ser implementado por las subclases
+    abstract mostrarInformacion(): void;
 
-  public fly(): void {
+    public fly(): void {
 
-  };
+    };
 
 }
 
 // Clase para un simulador de vuelo
 class AvionSimulador extends Avion {
-  private velocidad: number;
-  private altitud: number;
+    private velocidad: number;
+    private altitud: number;
 
-  constructor(modelo: string, velocidad: number, altitud: number) {
-    super(modelo);
-    this.velocidad = velocidad;
-    this.altitud = altitud;
-  }
+    constructor(modelo: string, velocidad: number, altitud: number) {
+        super(modelo);
+        this.velocidad = velocidad;
+        this.altitud = altitud;
+    }
 
-  mostrarInformacion(): void {
-    console.log(
-      `Modelo: ${this.modelo}, Velocidad: ${this.velocidad} km/h, Altitud: ${this.altitud} metros.`
-    );
-  }
+    mostrarInformacion(): void {
+        console.log(
+            `Modelo: ${this.modelo}, Velocidad: ${this.velocidad} km/h, Altitud: ${this.altitud} metros.`
+        );
+    }
 }
 
 // Clase para una aplicación de reserva de vuelos
 class AvionReserva extends Avion {
-  private asientos: string[];
+    private asientos: string[];
 
-  constructor(modelo: string, asientos: string[]) {
-    super(modelo);
-    this.asientos = asientos;
-  }
+    constructor(modelo: string, asientos: string[]) {
+        super(modelo);
+        this.asientos = asientos;
+    }
 
-  mostrarInformacion(): void {
-    console.log(
-      `Modelo: ${this.modelo}, Asientos disponibles: ${this.asientos.join(
-        ", "
-      )}.`
-    );
-  }
+    mostrarInformacion(): void {
+        console.log(
+            `Modelo: ${this.modelo}, Asientos disponibles: ${this.asientos.join(
+                ", "
+            )}.`
+        );
+    }
 }
 
 // Ejemplo de uso
